@@ -1,9 +1,10 @@
 FavoriteItemsMarker = FavoriteItemsMarker or {}
 local FIM = FavoriteItemsMarker
 FIM.name = "FavoriteItemsMarker"
-FIM.version = "0.0.0"
+FIM.version = "0.1.0"
 
 local defaultOptions = {
+    enabled = true,
     partialNames = {},
 }
 
@@ -47,7 +48,7 @@ local function FlagListItem(link, control, context)
         itemLink = GetItemLink(context.bagId, context.slotIndex)
     end
 
-    local shouldShow = ShouldShowIndicator(itemLink)
+    local shouldShow = FIM.savedOptions.enabled and ShouldShowIndicator(itemLink)
 
     -- Get or create our indicator
     local indicator = control:GetNamedChild("FIMIndicator")

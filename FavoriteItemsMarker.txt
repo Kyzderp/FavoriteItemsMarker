@@ -1,6 +1,6 @@
 ## Title: FavoriteItemsMarker
 ## Author: Kyzeragon
-## Version: 0.0.0
+## Version: 0.1.0
 ## APIVersion: 101032
 ## DependsOn: LibAddonMenu-2.0>=31
 
