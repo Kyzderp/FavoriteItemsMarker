@@ -1,0 +1,13 @@
+## Title: FavoriteItemsMarker
+## Author: Kyzeragon
+## Version: 0.0.0
+## APIVersion: 101032
+## DependsOn: LibAddonMenu-2.0>=31
+
+## SavedVariables: FavoriteItemsMarkerSavedVariables
+
+src/FavoriteItemsMarker.lua
+src/Settings.lua
+
+
+; Thanks to code65536's Loot Log addon for control hooks code
