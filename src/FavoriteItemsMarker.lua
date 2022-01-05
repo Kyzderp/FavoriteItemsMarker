@@ -1,7 +1,7 @@
 FavoriteItemsMarker = FavoriteItemsMarker or {}
 local FIM = FavoriteItemsMarker
 FIM.name = "FavoriteItemsMarker"
-FIM.version = "0.1.0"
+FIM.version = "0.2.0"
 
 local defaultOptions = {
     enabled = true,
@@ -14,7 +14,12 @@ local defaultOptions = {
 local function ShouldShowIndicator(link)
     local lowerItemName = string.lower(GetItemLinkName(link))
     for _, partialName in ipairs(FIM.savedOptions.partialNames) do
+        -- By item name
         if (string.find(lowerItemName, string.lower(partialName))) then
+            return true
+        end
+        -- By item ID
+        if (string.find(link, string.format("item:%s:", partialName))) then
             return true
         end
     end

@@ -36,7 +36,7 @@ function FIM.CreateSettingsMenu()
     local optionsData = {
         {
             type = "description",
-            text = "If an item name contains the full or partial string (case-insensitive), a |c00FF00|t22:22:/esoui/art/icons/pet_voriplasm.dds:inheritcolor|t|r will be displayed next to the item texture. Probably won't play super well with GridList but I'm too lazy to make more granular settings.",
+            text = "If an item name contains the full or partial string (case-insensitive) or full ID, a |c00FF00|t22:22:/esoui/art/icons/pet_voriplasm.dds:inheritcolor|t|r will be displayed next to the item texture. Probably won't play super well with GridList but I'm too lazy to make more granular settings.",
             width = "full",
         },
         {
@@ -54,7 +54,7 @@ function FIM.CreateSettingsMenu()
         {
             type = "dropdown",
             name = "Item names filter",
-            tooltip = "Full or partial item names. Select one from this dropdown to remove it",
+            tooltip = "Full or partial item names or full ID. Select one from this dropdown to remove it",
             choices = {},
             getFunc = function()
                 FIM_PartialNames:UpdateChoices(FIM.savedOptions.partialNames)
@@ -72,7 +72,7 @@ function FIM.CreateSettingsMenu()
         {
             type = "editbox",
             name = "Add item name",
-            tooltip = "Enter an item name to add it to the filter list",
+            tooltip = "Enter an item name or ID to add it to the filter list",
             getFunc = function()
                 return ""
             end,
